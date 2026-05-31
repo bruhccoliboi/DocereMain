@@ -305,7 +305,7 @@ export function CalendarView({ onSessionClick, onSlotClick }: CalendarViewProps)
             }}
           >
             <div
-              className="grid min-w-[600px]"
+              className="grid min-w-[300px]"
               style={{
                 gridTemplateColumns: `48px repeat(${displayDays.length}, minmax(100px, 1fr))`,
               }}
