@@ -196,7 +196,7 @@ function LearnersContent() {
             }
           />
         ) : (
-          <div className="space-y-6">
+          <div className="space-y-8">
             {displayed.map((learner) => {
               const billing = billingProfiles.find(
                 (b) => b.learnerId === learner.id,
