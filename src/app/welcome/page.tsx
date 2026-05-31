@@ -29,12 +29,11 @@ export default function WelcomePage() {
         </h1>
 
         <p className="text-lg text-text-secondary leading-relaxed mb-2">
-          Latin for &ldquo;to teach.&rdquo;
+          &ldquo;to teach.&rdquo;
         </p>
 
         <p className="text-sm text-text-muted leading-relaxed mb-10 max-w-md mx-auto">
-          Your private workspace to remember every lesson, track learner progress,
-          and focus on what matters: teaching as a craft.
+        Organized Teaching.
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
@@ -42,7 +41,7 @@ export default function WelcomePage() {
             <Button size="lg">Begin setup</Button>
           </Link>
           <p className="text-xs text-text-muted">
-            Starts completely empty. No sample data.
+            
           </p>
         </div>
       </motion.div>
