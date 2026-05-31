@@ -27,7 +27,7 @@ export function EmptyState({
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       className={cn(
-        "flex flex-col items-center justify-center text-center py-16 px-6",
+        "flex flex-col items-center justify-center text-center py-8 px-6",
         className,
       )}
     >
@@ -45,7 +45,7 @@ export function EmptyState({
         </p>
       ) : null}
       {action && (
-        <Button className="mt-6" onClick={action.onClick}>
+        <Button className="mt-4" onClick={action.onClick}>
           {action.label}
         </Button>
       )}
