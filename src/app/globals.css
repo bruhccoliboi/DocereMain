@@ -1,26 +1,106 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --bg-deep: #0a0a09;
+  --bg-charcoal: #0f0f0e;
+  --bg-graphite: #141413;
+  --surface-1: #1a1a18;
+  --surface-2: #222220;
+  --surface-3: #2a2a27;
+  --border-subtle: rgba(232, 228, 220, 0.08);
+  --border-strong: rgba(232, 228, 220, 0.14);
+  --olive: #6b7c5e;
+  --moss: #4a5d42;
+  --sage: #8a9a7b;
+  --amber: #c4a574;
+  --brass: #a69060;
+  --cream: #e8e4dc;
+  --text-primary: #f5f2eb;
+  --text-secondary: #b8b4ab;
+  --text-muted: #7a766e;
+  --glow-olive: rgba(107, 124, 94, 0.15);
+  --shadow-soft: 0 4px 24px rgba(0, 0, 0, 0.4);
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-bg-deep: var(--bg-deep);
+  --color-bg-charcoal: var(--bg-charcoal);
+  --color-bg-graphite: var(--bg-graphite);
+  --color-surface-1: var(--surface-1);
+  --color-surface-2: var(--surface-2);
+  --color-surface-3: var(--surface-3);
+  --color-olive: var(--olive);
+  --color-moss: var(--moss);
+  --color-sage: var(--sage);
+  --color-amber: var(--amber);
+  --color-brass: var(--brass);
+  --color-cream: var(--cream);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --font-heading: var(--font-space-grotesk);
+  --font-body: var(--font-inter);
+  --font-mono: var(--font-jetbrains);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+* {
+  box-sizing: border-box;
+}
+
+html {
+  height: 100%;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100%;
+  background: var(--bg-deep);
+  color: var(--text-primary);
+  font-family: var(--font-inter), system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Subtle paper grain texture */
+.docere-grain::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+.font-heading {
+  font-family: var(--font-space-grotesk), system-ui, sans-serif;
+}
+
+.font-mono-data {
+  font-family: var(--font-jetbrains), ui-monospace, monospace;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-3);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--olive);
+}
+
+/* Command palette */
+[cmdk-root] {
+  background: var(--surface-1);
+}
+[cmdk-input] {
+  outline: none;
+}
+[cmdk-item][data-selected="true"] {
+  background: var(--glow-olive);
 }

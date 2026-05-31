@@ -1,36 +1,101 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Docere
+
+**The Teacher's Journal**
+
+Docere (Latin for "to teach") is a premium Progressive Web Application for independent educators. A private workspace to remember every lesson, track learner progress, manage schedules, handle reschedules, and track payments.
+
+## Features
+
+### Core workspace
+- **Blank start**: No demo data. Build from scratch via onboarding.
+- **Today dashboard**: Sessions, timeline, pending notes, payments, makeup lessons, weekly snapshot.
+- **Learners**: Profiles with photo, goals, tags, learning items, billing snapshot.
+- **Learning journey timeline**: Chronological session memory with voice notes.
+
+### Session documentation
+- **Voice notes**: Browser speech recognition + optional audio recording.
+- **AI structuring**: Auto-extract summary, progress, homework, next focus (OpenAI optional, local fallback always works).
+- **Session note editor**: Quick, detailed, and structured tabs.
+
+### Scheduling
+- **Day / week / month** calendar views.
+- **Drag-and-drop** rescheduling on week/day grid.
+- **Recurring rules** with 12-week session generation.
+- **Duplicate sessions**, linked reschedules, makeup tracking.
+
+### Studio Mode
+- One-screen lesson prep: last session, goals, homework, focus, payment status.
+- **Session timer** with visual progress ring.
+- Mark complete and document without leaving Studio.
+
+### Payments
+- Monthly, per-session, package, group, custom billing.
+- Package session decrement on attendance.
+- Payment history (never overwritten).
+
+### Reports
+- Revenue and session **charts** (12-week revenue, 8-week sessions).
+- CSV export for payments, JSON full backup.
+
+### Productivity
+- **Command palette** (`Cmd/Ctrl+K`): search and navigate.
+- **Toast notifications** (Sonner).
+
+### Cloud (optional)
+- **Supabase auth** sign in/up in Settings.
+- **Workspace snapshot sync** to `workspace_snapshots` table.
+- Auto-sync on data changes when signed in.
+- Import/export JSON backup locally.
+
+### PWA
+- Installable, service worker in production builds, offline local data.
+
+## Design
+
+Dark charcoal, olive accents, warm cream text. Space Grotesk, Inter, JetBrains Mono.
+
+## Tech Stack
+
+- Next.js 16, TypeScript, Tailwind CSS 4
+- Framer Motion, Zustand, cmdk, Sonner
+- @dnd-kit (calendar drag), Recharts (reports)
+- Supabase (optional), @ducanh2912/next-pwa
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Environment
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Copy `.env.example` to `.env.local`:
 
-## Learn More
+```bash
+# Optional Supabase
+NEXT_PUBLIC_SUPABASE_URL=
+NEXT_PUBLIC_SUPABASE_ANON_KEY=
 
-To learn more about Next.js, take a look at the following resources:
+# Optional OpenAI (better note structuring)
+OPENAI_API_KEY=
+OPENAI_MODEL=gpt-4o-mini
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Run SQL in Supabase:
+1. `supabase/schema.sql`
+2. `supabase/migrations/002_workspace_snapshots.sql`
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Scripts
 
-## Deploy on Vercel
+| Command | Description |
+|---------|-------------|
+| `npm run dev` | Development |
+| `npm run build` | Production (webpack + PWA) |
+| `npm start` | Production server |
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Philosophy
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Teaching is a craft. Docere is the workspace that remembers everything.
