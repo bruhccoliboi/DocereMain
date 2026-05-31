@@ -124,7 +124,7 @@ function TimeSlotDrop({
 }
 
 export function CalendarView({ onSessionClick, onSlotClick }: CalendarViewProps) {
-  const [view, setView] = useState<CalView>("Day");
+  const [view, setView] = useState<CalView>("day");
   const [cursor, setCursor] = useState(new Date());
   const [activeSession, setActiveSession] = useState<TeachingSession | null>(
     null,
