@@ -15,7 +15,7 @@ import { cn } from "@/lib/utils";
 
 const navItems = [
   { href: "/dashboard", label: "Today", icon: LayoutDashboard },
-  { href: "/learners", label: "Learners", icon: GraduationCap },
+  { href: "/learners", label: "Students", icon: GraduationCap },
   { href: "/schedule", label: "Schedule", icon: Calendar },
   { href: "/payments", label: "Payments", icon: CreditCard },
   { href: "/reports", label: "Reports", icon: BarChart3 },

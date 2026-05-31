@@ -98,7 +98,7 @@ function LearnersContent() {
 
   return (
     <>
-      <Header title="Learners" />
+      <Header title="Students" />
 
       <div className="p-4 max-w-3xl space-y-4">
         <div className="flex flex-row gap-3">
@@ -107,7 +107,7 @@ function LearnersContent() {
             <input
               value={search}
               onChange={(e) => setSearch(e.target.value)}
-              placeholder="Search..."
+              placeholder="Search students..."
               className="w-full h-9 pl-9 pr-3 rounded-lg bg-surface-2 border border-[var(--border-subtle)] text-sm"
             />
           </div>
@@ -184,14 +184,14 @@ function LearnersContent() {
           <EmptyState
             title={
               learners.length === 0
-                ? "No learners yet"
+                ? "No students yet"
                 : dayFilter !== "all"
                   ? `No ${WEEKDAY_NAMES[dayFilter as number]} batch`
                   : "No matches"
             }
             action={
               learners.length === 0
-                ? { label: "Add learner", onClick: () => setShowForm(true) }
+                ? { label: "Add student", onClick: () => setShowForm(true) }
                 : undefined
             }
           />

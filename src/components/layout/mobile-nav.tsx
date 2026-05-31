@@ -12,7 +12,7 @@ import { cn } from "@/lib/utils";
 
 const items = [
   { href: "/dashboard", icon: LayoutDashboard, label: "Today" },
-  { href: "/learners", icon: GraduationCap, label: "Learners" },
+  { href: "/learners", icon: GraduationCap, label: "Students" },
   { href: "/schedule", icon: Calendar, label: "Schedule" },
   { href: "/studio", icon: Sparkles, label: "Studio" },
 ];
